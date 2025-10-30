@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #7881ff;
+  --border-color: #abafff;
+}
+
+input, select {
+  width: 100%;
+  background: none;
+  margin-top: 0.2rem;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+}
+
+button {
+  background: none;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+/* 헤더 영역 */
+header {
+  width: 100%;
+  height: 5.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.625rem 5rem;
+  background-color: var(--main-color);
+}
+
+.header-text-left {
+  font-size: 2rem;
+}
+
+.header-text-right {
+  font-size: 1rem;
+}
+
+
+/* 검색 필터 영역 */
+.search {
+  max-width: 70%;
+  flex-direction: column;
+  margin: 2rem auto;
+  padding: 0.625rem 1.2rem;
+  border: 1px solid var(--main-color);
+  border-radius: 0.625rem;
+}
+
+/* form을 같은 비율의 6칸으로 나누고,
+여섯 칸 / 세 칸 / 두 칸씩 나눠가지게 구현 */
+
+.filter-form {
+  display: grid;
+  margin: 0.5rem 0;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 6;
+}
+
+.filter-group label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.filter-group:nth-child(3), :nth-child(4), :nth-child(5) {
+  grid-column: span 2;
+}
+
+.filter-group:nth-child(6), :nth-child(7) {
+  grid-column: span 3;
+}
+
+.filter-button-area {
+  display: flex;
+  grid-column: span 6;
+  gap: 1rem;
+}
+
+.filter-form button {
+  width: 100%;
+  grid-column: span 3;
+  background-color: var(--main-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 테이블 영역 */
+
+table {
+  width: 100%;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.search-result {
+  max-width: 70%;
+  flex-direction: column;
+  margin: 2rem auto;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-button-area {
+  display: flex;
+  gap: 1rem;
+}
+
+.table-button-area button {
+  background-color: var(--main-color);
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+th {
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: var(--border-color);
+  border-collapse: collapse;
+}
+
+/* 모달 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content {
+  width: 50%;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.add-group {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 4;
+  margin-bottom: 0.5rem;
+}
+
+.add-group label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.add-form button {
+  width: 100%;
+  background-color: var(--main-color);
+  margin-top: 1rem;
+}
